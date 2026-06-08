@@ -1,0 +1,3 @@
+
+function filterCards(inputId, selector){const q=(document.getElementById(inputId)?.value||'').toLowerCase();document.querySelectorAll(selector).forEach(el=>{el.classList.toggle('hidden',!el.textContent.toLowerCase().includes(q));});}
+document.addEventListener('click',e=>{if(e.target.matches('[data-tab]')){let group=e.target.closest('.tabbox');group.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));e.target.classList.add('active');group.querySelectorAll('.tabpanel').forEach(p=>p.classList.remove('active'));group.querySelector('#'+e.target.dataset.tab).classList.add('active');}});
